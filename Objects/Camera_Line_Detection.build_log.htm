@@ -22,7 +22,7 @@ Dialog DLL:      TARMCM1.DLL V1.10.0.0
  
 <h2>Project:</h2>
 C:\Users\Cameron\Documents\EN0627\Camera_Line_Detection\Camera_Line_Detection.uvprojx
-Project File Date:  11/30/2016
+Project File Date:  01/10/2017
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 3 (build 300)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
@@ -32,16 +32,27 @@ compiling UARTHandler.c...
 compiling TFCHandler.c...
 compiling CameraHandler.c...
 compiling CameraDriver.c...
+CameraDriver.c(67): warning:  #177-D: variable "l" was declared but never referenced
+        unsigned short int l;
+CameraDriver.c: 1 warning, 0 errors
 compiling TimerDriver.c...
 compiling PITDriver.c...
+compiling ServoDriver.c...
+compiling MotorDriver.c...
 compiling LED_FRDM-KL25Z.c...
 assembling startup_MKL25Z4.s...
 compiling system_MKL25Z4.c...
 linking...
-Program Size: Code=2540 RO-data=224 RW-data=24 ZI-data=1480  
-".\Objects\Camera_Line_Detection.axf" - 0 Error(s), 0 Warning(s).
+Program Size: Code=3660 RO-data=224 RW-data=48 ZI-data=1408  
+".\Objects\Camera_Line_Detection.axf" - 0 Error(s), 1 Warning(s).
 
 <h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.4.5.0.pack
+                ARM::CMSIS:CORE:4.3.0
+                CMSIS (Cortex Microcontroller Software Interface Standard)
+   * Component: CORE Version: 4.3.0
 
 Package Vendor: Keil
                 http://www.keil.com/pack/Keil.MDK-Middleware.7.2.0.pack
@@ -56,12 +67,6 @@ Package Vendor: Keil
    * Component: Startup Version: 2.5.0
    * Component: LED Version: 1.0.0
 
-Package Vendor: ARM
-                http://www.keil.com/pack/ARM.CMSIS.4.5.0.pack
-                ARM::CMSIS:CORE:4.3.0
-                CMSIS (Cortex Microcontroller Software Interface Standard)
-   * Component: CORE Version: 4.3.0
-
 <h2>Collection of Component include folders:</h2>
   C:\Users\Cameron\Documents\EN0627\Camera_Line_Detection\RTE
   C:\Users\Cameron\Documents\EN0627\Camera_Line_Detection\RTE\Device\MKL25Z128xxx4
@@ -70,6 +75,8 @@ Package Vendor: ARM
   C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.2.0\Board
 
 <h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:4.3.0
 
    * Component: ::Board Support:LED:1.00 (API)
       Include file:  Board\Board_LED.h
@@ -81,8 +88,6 @@ Package Vendor: ARM
 
    * Component: Keil.FRDM-KL25Z::Board Support:LED:1.0.0
       Source file:   Boards\NXP\FRDM-KL25Z\Common\LED_FRDM-KL25Z.c
-
-   * Component: ARM::CMSIS:CORE:4.3.0
 Build Time Elapsed:  00:00:03
 </pre>
 </body>

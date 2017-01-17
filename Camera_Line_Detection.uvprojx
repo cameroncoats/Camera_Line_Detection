@@ -409,6 +409,11 @@
               <FileType>1</FileType>
               <FilePath>.\TimerDriver.c</FilePath>
             </File>
+            <File>
+              <FileName>PITDriver.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\PITDriver.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

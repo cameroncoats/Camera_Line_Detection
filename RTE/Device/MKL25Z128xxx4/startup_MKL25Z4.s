@@ -285,7 +285,7 @@ NMI_Handler\
 HardFault_Handler\
                 PROC
                 EXPORT  HardFault_Handler         [WEAK]
-                B       .
+				B		.
                 ENDP
 SVC_Handler\
                 PROC

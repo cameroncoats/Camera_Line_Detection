@@ -1,0 +1,15 @@
+// Aldo Hasani / Group 3
+// EN0627 / NXP Car
+// 
+// Motor Driver
+#include <stdbool.h>
+#ifndef MotorDriver
+  #define MotorDriver
+	void initMotors(void);
+	void disableMotors(void);
+	void enableMotors(void);
+	void setTorqueVectors(int);
+	extern unsigned short int POT1_Value;
+	#define TORQUEVECTOR_AMT 60
+	extern void sendString(char *);
+#endif

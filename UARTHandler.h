@@ -10,7 +10,7 @@
 	#define UART0_ClockMask 0x400
 	#define BaudGenClockSource_MCGFLL 0x04000000
 	#define Baudrate_115200H 0x0
-	#define Baudrate_115200L 0x17
+	#define Baudrate_115200L 0xC
 	#define Disable_TxRx 0
 	#define Enable_TxRx 0x0C
 	#define Oversampling_16x 0x0F

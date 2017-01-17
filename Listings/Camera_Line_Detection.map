@@ -7,30 +7,51 @@ Section Cross References
     main.o(i.main) refers to _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) for _printf_percent
     main.o(i.main) refers to _printf_d.o(.ARM.Collect$$_printf_percent$$00000009) for _printf_d
     main.o(i.main) refers to _printf_dec.o(.text) for _printf_int_dec
+    main.o(i.main) refers to main.o(i.__ARM_common_switch8) for __ARM_common_switch8
     main.o(i.main) refers to tfchandler.o(i.initPorts) for initPorts
+    main.o(i.main) refers to timerdriver.o(i.initTimer0) for initTimer0
     main.o(i.main) refers to uarthandler.o(i.initialiseUART0) for initialiseUART0
     main.o(i.main) refers to cameradriver.o(i.initCameraDriver) for initCameraDriver
-    main.o(i.main) refers to pitdriver.o(i.PITInit) for PITInit
+    main.o(i.main) refers to motordriver.o(i.initMotors) for initMotors
+    main.o(i.main) refers to pitdriver.o(i.initPIT) for initPIT
+    main.o(i.main) refers to servodriver.o(i.initServo) for initServo
+    main.o(i.main) refers to servodriver.o(i.setCenter) for setCenter
     main.o(i.main) refers to uarthandler.o(i.sendString) for sendString
+    main.o(i.main) refers to motordriver.o(i.disableMotors) for disableMotors
+    main.o(i.main) refers to camerahandler.o(i.getExposureScore) for getExposureScore
+    main.o(i.main) refers to motordriver.o(i.enableMotors) for enableMotors
     main.o(i.main) refers to camerahandler.o(i.getLineOffset) for getLineOffset
+    main.o(i.main) refers to motordriver.o(i.setTorqueVectors) for setTorqueVectors
+    main.o(i.main) refers to servodriver.o(i.setSteeringAngle) for setSteeringAngle
     main.o(i.main) refers to noretval__2sprintf.o(.text) for __2sprintf
     main.o(i.main) refers to main.o(.data) for State
-    main.o(i.main) refers to cameradriver.o(.data) for BATT_Value
-    main.o(i.main) refers to main.o(.bss) for stringBuffer
+    main.o(i.main) refers to camerahandler.o(.data) for cameraFault
+    main.o(i.main) refers to cameradriver.o(.data) for POT0_Value
+    camerahandler.o(i.getExposureScore) refers to camerahandler.o(.data) for CalcInProgress
+    camerahandler.o(i.getExposureScore) refers to cameradriver.o(.data) for safeBuffer
+    camerahandler.o(i.getExposureScore) refers to cameradriver.o(.bss) for image
+    camerahandler.o(i.getLineOffset) refers to cameradriver.o(i.swapBuffers) for swapBuffers
     camerahandler.o(i.getLineOffset) refers to camerahandler.o(.data) for CalcInProgress
     camerahandler.o(i.getLineOffset) refers to cameradriver.o(.data) for safeBuffer
     camerahandler.o(i.getLineOffset) refers to cameradriver.o(.bss) for image
-    cameradriver.o(i.ADC0_IRQHandler) refers to cameradriver.o(i.__ARM_common_switch8) for __ARM_common_switch8
+    camerahandler.o(i.getLineOffset) refers to camerahandler.o(.bss) for pastValues
+    cameradriver.o(i.ADC0_IRQHandler) refers to main.o(i.__ARM_common_switch8) for __ARM_common_switch8
+    cameradriver.o(i.ADC0_IRQHandler) refers to tfchandler.o(i.setLEDs) for setLEDs
+    cameradriver.o(i.ADC0_IRQHandler) refers to cameradriver.o(i.swapBuffers) for swapBuffers
     cameradriver.o(i.ADC0_IRQHandler) refers to cameradriver.o(.data) for CameraState
     cameradriver.o(i.ADC0_IRQHandler) refers to cameradriver.o(.bss) for image
     cameradriver.o(i.ADC0_IRQHandler) refers to camerahandler.o(.data) for CalcInProgress
     cameradriver.o(i.initCameraDriver) refers to cameradriver.o(i.initCamera) for initCamera
-    cameradriver.o(i.initCameraDriver) refers to timerdriver.o(i.initialiseTimer0) for initialiseTimer0
     cameradriver.o(i.initCameraDriver) refers to cameradriver.o(.data) for CameraState
-    cameradriver.o(i.startImageCapture) refers to timerdriver.o(i.Timer0_DelayuS) for Timer0_DelayuS
-    cameradriver.o(i.startImageCapture) refers to cameradriver.o(.data) for volatileBuffer
-    cameradriver.o(i.startImageCapture) refers to cameradriver.o(.bss) for image
+    cameradriver.o(i.startImageCapture) refers to cameradriver.o(.data) for PixelCounter
+    cameradriver.o(i.swapBuffers) refers to cameradriver.o(.data) for safeBuffer
     pitdriver.o(i.PIT_IRQHandler) refers to cameradriver.o(i.startImageCapture) for startImageCapture
+    pitdriver.o(i.PIT_IRQHandler) refers to main.o(.data) for runMainLoop
+    servodriver.o(i.setSteeringAngle) refers to cameradriver.o(.data) for POT0_Value
+    motordriver.o(i.disableMotors) refers to uarthandler.o(i.sendString) for sendString
+    motordriver.o(i.enableMotors) refers to uarthandler.o(i.sendString) for sendString
+    motordriver.o(i.initMotors) refers to cameradriver.o(.data) for POT1_Value
+    motordriver.o(i.setTorqueVectors) refers to cameradriver.o(.data) for POT1_Value
     led_frdm-kl25z.o(i.LED_Initialize) refers to led_frdm-kl25z.o(.constdata) for led_port
     led_frdm-kl25z.o(i.LED_Off) refers to led_frdm-kl25z.o(.constdata) for led_pin
     led_frdm-kl25z.o(i.LED_On) refers to led_frdm-kl25z.o(.constdata) for led_pin
@@ -50,7 +71,7 @@ Section Cross References
     startup_mkl25z4.o(.text) refers to startup_mkl25z4.o(HEAP) for Heap_Mem
     startup_mkl25z4.o(.text) refers to startup_mkl25z4.o(STACK) for Stack_Mem
     system_mkl25z4.o(i.SystemCoreClockUpdate) refers to aeabi_sdiv.o(.text) for __aeabi_uidivmod
-    system_mkl25z4.o(i.SystemCoreClockUpdate) refers to cameradriver.o(i.__ARM_common_switch8) for __ARM_common_switch8
+    system_mkl25z4.o(i.SystemCoreClockUpdate) refers to main.o(i.__ARM_common_switch8) for __ARM_common_switch8
     system_mkl25z4.o(i.SystemCoreClockUpdate) refers to system_mkl25z4.o(.data) for SystemCoreClock
     __2sprintf.o(.text) refers to _printf_char_common.o(.text) for _printf_char_common
     __2sprintf.o(.text) refers to _sputc.o(.text) for _sputc
@@ -200,9 +221,15 @@ Removing Unused input sections from the image.
     Removing cameradriver.o(.revsh_text), (4 bytes).
     Removing timerdriver.o(.rev16_text), (4 bytes).
     Removing timerdriver.o(.revsh_text), (4 bytes).
-    Removing timerdriver.o(i.Timer0_DelaymS), (68 bytes).
+    Removing timerdriver.o(i.Timer0_DelaymS), (40 bytes).
+    Removing timerdriver.o(i.Timer0_DelayuS), (28 bytes).
     Removing pitdriver.o(.rev16_text), (4 bytes).
     Removing pitdriver.o(.revsh_text), (4 bytes).
+    Removing pitdriver.o(.data), (22 bytes).
+    Removing servodriver.o(.rev16_text), (4 bytes).
+    Removing servodriver.o(.revsh_text), (4 bytes).
+    Removing motordriver.o(.rev16_text), (4 bytes).
+    Removing motordriver.o(.revsh_text), (4 bytes).
     Removing led_frdm-kl25z.o(.rev16_text), (4 bytes).
     Removing led_frdm-kl25z.o(.revsh_text), (4 bytes).
     Removing led_frdm-kl25z.o(i.LED_GetCount), (4 bytes).
@@ -217,7 +244,7 @@ Removing Unused input sections from the image.
     Removing system_mkl25z4.o(i.SystemCoreClockUpdate), (400 bytes).
     Removing system_mkl25z4.o(.data), (4 bytes).
 
-28 unused section(s) (total 866 bytes) removed from the image.
+34 unused section(s) (total 904 bytes) removed from the image.
 
 ==============================================================================
 
@@ -228,77 +255,77 @@ Image Symbol Table
     Symbol Name                              Value     Ov Type        Size  Object(Section)
 
     RESET                                    0x00000000   Section      192  startup_mkl25z4.o(RESET)
-    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit3.o ABSOLUTE
-    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardshut.o ABSOLUTE
     ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit1.o ABSOLUTE
     ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit2.o ABSOLUTE
-    ../clib/angel/handlers.s                 0x00000000   Number         0  __scatter_copy.o ABSOLUTE
+    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit3.o ABSOLUTE
+    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardshut.o ABSOLUTE
     ../clib/angel/handlers.s                 0x00000000   Number         0  __scatter_zi.o ABSOLUTE
+    ../clib/angel/handlers.s                 0x00000000   Number         0  __scatter_copy.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  rtexit2.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry2.o ABSOLUTE
     ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry4.o ABSOLUTE
     ../clib/angel/kernel.s                   0x00000000   Number         0  rtexit.o ABSOLUTE
-    ../clib/angel/kernel.s                   0x00000000   Number         0  rtexit2.o ABSOLUTE
     ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry.o ABSOLUTE
-    ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry2.o ABSOLUTE
-    ../clib/angel/rt.s                       0x00000000   Number         0  rt_div0.o ABSOLUTE
-    ../clib/angel/rt.s                       0x00000000   Number         0  aeabi_idiv0.o ABSOLUTE
-    ../clib/angel/rt.s                       0x00000000   Number         0  aeabi_idiv0_sigfpe.o ABSOLUTE
     ../clib/angel/rt.s                       0x00000000   Number         0  rt_raise.o ABSOLUTE
+    ../clib/angel/rt.s                       0x00000000   Number         0  aeabi_idiv0_sigfpe.o ABSOLUTE
+    ../clib/angel/rt.s                       0x00000000   Number         0  aeabi_idiv0.o ABSOLUTE
+    ../clib/angel/rt.s                       0x00000000   Number         0  rt_div0.o ABSOLUTE
     ../clib/angel/scatterp.s                 0x00000000   Number         0  __scatter.o ABSOLUTE
     ../clib/angel/startup.s                  0x00000000   Number         0  __main.o ABSOLUTE
     ../clib/angel/sys.s                      0x00000000   Number         0  tempstk.o ABSOLUTE
-    ../clib/angel/sys.s                      0x00000000   Number         0  use_no_semi.o ABSOLUTE
-    ../clib/angel/sys.s                      0x00000000   Number         0  indicate_semi.o ABSOLUTE
     ../clib/angel/sys.s                      0x00000000   Number         0  sys_stackheap_outer.o ABSOLUTE
     ../clib/angel/sys.s                      0x00000000   Number         0  libspace.o ABSOLUTE
-    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_command.o ABSOLUTE
-    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_exit.o ABSOLUTE
+    ../clib/angel/sys.s                      0x00000000   Number         0  use_no_semi.o ABSOLUTE
+    ../clib/angel/sys.s                      0x00000000   Number         0  indicate_semi.o ABSOLUTE
     ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_wrch.o ABSOLUTE
+    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_exit.o ABSOLUTE
+    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_command.o ABSOLUTE
+    ../clib/armsys.c                         0x00000000   Number         0  _get_argv_nomalloc.o ABSOLUTE
     ../clib/armsys.c                         0x00000000   Number         0  argv_veneer.o ABSOLUTE
     ../clib/armsys.c                         0x00000000   Number         0  no_argv.o ABSOLUTE
-    ../clib/armsys.c                         0x00000000   Number         0  _get_argv_nomalloc.o ABSOLUTE
     ../clib/division.c                       0x00000000   Number         0  rtudiv10.o ABSOLUTE
-    ../clib/division.s                       0x00000000   Number         0  aeabi_sdiv_div0.o ABSOLUTE
     ../clib/division.s                       0x00000000   Number         0  aeabi_sdiv.o ABSOLUTE
+    ../clib/division.s                       0x00000000   Number         0  aeabi_sdiv_div0.o ABSOLUTE
     ../clib/heapalloc.c                      0x00000000   Number         0  hrguard.o ABSOLUTE
     ../clib/heapaux.c                        0x00000000   Number         0  heapauxi.o ABSOLUTE
-    ../clib/libinit.s                        0x00000000   Number         0  libinit2.o ABSOLUTE
     ../clib/libinit.s                        0x00000000   Number         0  libshutdown2.o ABSOLUTE
-    ../clib/libinit.s                        0x00000000   Number         0  libinit.o ABSOLUTE
     ../clib/libinit.s                        0x00000000   Number         0  libshutdown.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  __printf_flags_ss.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  __printf_wp.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  __printf_flags_wp.o ABSOLUTE
+    ../clib/libinit.s                        0x00000000   Number         0  libinit.o ABSOLUTE
+    ../clib/libinit.s                        0x00000000   Number         0  libinit2.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  __printf_flags_ss_wp.o ABSOLUTE
     ../clib/printf.c                         0x00000000   Number         0  __printf_ss_wp.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  _sputc.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  _printf_char_common.o ABSOLUTE
     ../clib/printf.c                         0x00000000   Number         0  _printf_intcommon.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  __printf_nopercent.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  __printf_ss.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  __printf_flags_wp.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  __printf_wp.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  __printf_flags.o ABSOLUTE
     ../clib/printf.c                         0x00000000   Number         0  __2sprintf.o ABSOLUTE
     ../clib/printf.c                         0x00000000   Number         0  noretval__2sprintf.o ABSOLUTE
     ../clib/printf.c                         0x00000000   Number         0  __printf.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  _printf_char_common.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  __printf_nopercent.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  _sputc.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  __printf_ss.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  __printf_flags_ss.o ABSOLUTE
     ../clib/printf.c                         0x00000000   Number         0  _printf_dec.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  __printf_flags_ss_wp.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  __printf_flags.o ABSOLUTE
+    ../clib/printf_percent.s                 0x00000000   Number         0  _printf_d.o ABSOLUTE
     ../clib/printf_percent.s                 0x00000000   Number         0  _printf_percent_end.o ABSOLUTE
     ../clib/printf_percent.s                 0x00000000   Number         0  _printf_percent.o ABSOLUTE
-    ../clib/printf_percent.s                 0x00000000   Number         0  _printf_d.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_stak_inner.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_pvfn_inner.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_cppl_inner.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_segv_inner.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_other.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_abrt_inner.o ABSOLUTE
     ../clib/signal.c                         0x00000000   Number         0  defsig_fpe_outer.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_fpe_formal.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_exit.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_fpe_inner.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  __raise.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_general.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_rtred_inner.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_inner.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_outer.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_segv_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_cppl_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_stak_inner.o ABSOLUTE
     ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_formal.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_outer.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtred_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_abrt_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_general.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  __raise.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_fpe_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_exit.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_fpe_formal.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_pvfn_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_other.o ABSOLUTE
     ../clib/signal.s                         0x00000000   Number         0  defsig.o ABSOLUTE
     ../clib/stdlib.c                         0x00000000   Number         0  exit.o ABSOLUTE
     ../fplib/cfplib/fpinit.c                 0x00000000   Number         0  fpinit.o ABSOLUTE
@@ -308,11 +335,15 @@ Image Symbol Table
     CameraDriver.c                           0x00000000   Number         0  cameradriver.o ABSOLUTE
     CameraHandler.c                          0x00000000   Number         0  camerahandler.o ABSOLUTE
     CameraHandler.c                          0x00000000   Number         0  camerahandler.o ABSOLUTE
+    MotorDriver.c                            0x00000000   Number         0  motordriver.o ABSOLUTE
+    MotorDriver.c                            0x00000000   Number         0  motordriver.o ABSOLUTE
     PITDriver.c                              0x00000000   Number         0  pitdriver.o ABSOLUTE
     PITDriver.c                              0x00000000   Number         0  pitdriver.o ABSOLUTE
     RTE\Device\MKL25Z128xxx4\startup_MKL25Z4.s 0x00000000   Number         0  startup_mkl25z4.o ABSOLUTE
     RTE\Device\MKL25Z128xxx4\system_MKL25Z4.c 0x00000000   Number         0  system_mkl25z4.o ABSOLUTE
     RTE\\Device\\MKL25Z128xxx4\\system_MKL25Z4.c 0x00000000   Number         0  system_mkl25z4.o ABSOLUTE
+    ServoDriver.c                            0x00000000   Number         0  servodriver.o ABSOLUTE
+    ServoDriver.c                            0x00000000   Number         0  servodriver.o ABSOLUTE
     TFCHandler.c                             0x00000000   Number         0  tfchandler.o ABSOLUTE
     TFCHandler.c                             0x00000000   Number         0  tfchandler.o ABSOLUTE
     TimerDriver.c                            0x00000000   Number         0  timerdriver.o ABSOLUTE
@@ -388,31 +419,40 @@ Image Symbol Table
     .ARM.__at_0x400                          0x00000400   Section       16  startup_mkl25z4.o(.ARM.__at_0x400)
     .text                                    0x00000410   Section       62  sys_stackheap_outer.o(.text)
     i.ADC0_IRQHandler                        0x00000450   Section        0  cameradriver.o(i.ADC0_IRQHandler)
-    i.PITInit                                0x00000590   Section        0  pitdriver.o(i.PITInit)
-    i.PIT_IRQHandler                         0x000005ec   Section        0  pitdriver.o(i.PIT_IRQHandler)
-    i.SystemInit                             0x00000614   Section        0  system_mkl25z4.o(i.SystemInit)
-    i.Timer0_DelayuS                         0x00000620   Section        0  timerdriver.o(i.Timer0_DelayuS)
-    i.__ARM_common_switch8                   0x00000660   Section        0  cameradriver.o(i.__ARM_common_switch8)
-    i.getLineOffset                          0x0000067c   Section        0  camerahandler.o(i.getLineOffset)
-    i.initCamera                             0x00000734   Section        0  cameradriver.o(i.initCamera)
-    i.initCameraDriver                       0x000007c8   Section        0  cameradriver.o(i.initCameraDriver)
-    i.initPorts                              0x00000800   Section        0  tfchandler.o(i.initPorts)
-    i.initialiseTimer0                       0x0000085c   Section        0  timerdriver.o(i.initialiseTimer0)
-    i.initialiseUART0                        0x000008ac   Section        0  uarthandler.o(i.initialiseUART0)
-    i.main                                   0x00000904   Section        0  main.o(i.main)
-    i.sendString                             0x000009fc   Section        0  uarthandler.o(i.sendString)
-    i.startImageCapture                      0x00000a24   Section        0  cameradriver.o(i.startImageCapture)
-    .data                                    0x1ffff000   Section        3  main.o(.data)
-    .data                                    0x1ffff003   Section        1  camerahandler.o(.data)
-    .data                                    0x1ffff004   Section       17  cameradriver.o(.data)
-    .bss                                     0x1ffff018   Section      100  main.o(.bss)
-    .bss                                     0x1ffff07c   Section     1024  cameradriver.o(.bss)
-    .bss                                     0x1ffff47c   Section       96  libspace.o(.bss)
-    HEAP                                     0x1ffff4e0   Section        0  startup_mkl25z4.o(HEAP)
-    STACK                                    0x1ffff4e0   Section      256  startup_mkl25z4.o(STACK)
-    Heap_Mem                                 0x1ffff4e0   Data           0  startup_mkl25z4.o(HEAP)
-    Stack_Mem                                0x1ffff4e0   Data         256  startup_mkl25z4.o(STACK)
-    __initial_sp                             0x1ffff5e0   Data           0  startup_mkl25z4.o(STACK)
+    i.PIT_IRQHandler                         0x0000056c   Section        0  pitdriver.o(i.PIT_IRQHandler)
+    i.SystemInit                             0x000005a0   Section        0  system_mkl25z4.o(i.SystemInit)
+    i.__ARM_common_switch8                   0x000005ac   Section        0  main.o(i.__ARM_common_switch8)
+    i.disableMotors                          0x000005c8   Section        0  motordriver.o(i.disableMotors)
+    i.enableMotors                           0x000005f8   Section        0  motordriver.o(i.enableMotors)
+    i.getExposureScore                       0x00000624   Section        0  camerahandler.o(i.getExposureScore)
+    i.getLineOffset                          0x000006f0   Section        0  camerahandler.o(i.getLineOffset)
+    i.initCamera                             0x000008ac   Section        0  cameradriver.o(i.initCamera)
+    i.initCameraDriver                       0x00000940   Section        0  cameradriver.o(i.initCameraDriver)
+    i.initMotors                             0x00000974   Section        0  motordriver.o(i.initMotors)
+    i.initPIT                                0x00000a1c   Section        0  pitdriver.o(i.initPIT)
+    i.initPorts                              0x00000a78   Section        0  tfchandler.o(i.initPorts)
+    i.initServo                              0x00000aec   Section        0  servodriver.o(i.initServo)
+    i.initTimer0                             0x00000b34   Section        0  timerdriver.o(i.initTimer0)
+    i.initialiseUART0                        0x00000b74   Section        0  uarthandler.o(i.initialiseUART0)
+    i.main                                   0x00000bcc   Section        0  main.o(i.main)
+    i.sendString                             0x00000d64   Section        0  uarthandler.o(i.sendString)
+    i.setCenter                              0x00000d8c   Section        0  servodriver.o(i.setCenter)
+    i.setLEDs                                0x00000d9c   Section        0  tfchandler.o(i.setLEDs)
+    i.setSteeringAngle                       0x00000e28   Section        0  servodriver.o(i.setSteeringAngle)
+    i.setTorqueVectors                       0x00000e4c   Section        0  motordriver.o(i.setTorqueVectors)
+    i.startImageCapture                      0x00000e6c   Section        0  cameradriver.o(i.startImageCapture)
+    i.swapBuffers                            0x00000edc   Section        0  cameradriver.o(i.swapBuffers)
+    .data                                    0x1ffff000   Section        8  main.o(.data)
+    .data                                    0x1ffff008   Section       21  camerahandler.o(.data)
+    .data                                    0x1ffff01e   Section       18  cameradriver.o(.data)
+    .bss                                     0x1ffff030   Section       32  camerahandler.o(.bss)
+    .bss                                     0x1ffff050   Section     1024  cameradriver.o(.bss)
+    .bss                                     0x1ffff450   Section       96  libspace.o(.bss)
+    HEAP                                     0x1ffff4b0   Section        0  startup_mkl25z4.o(HEAP)
+    STACK                                    0x1ffff4b0   Section      256  startup_mkl25z4.o(STACK)
+    Heap_Mem                                 0x1ffff4b0   Data           0  startup_mkl25z4.o(HEAP)
+    Stack_Mem                                0x1ffff4b0   Data         256  startup_mkl25z4.o(STACK)
+    __initial_sp                             0x1ffff5b0   Data           0  startup_mkl25z4.o(STACK)
 
     Global Symbols
 
@@ -563,38 +603,58 @@ Image Symbol Table
     __use_no_semihosting_swi                 0x000003f5   Thumb Code     2  use_no_semi.o(.text)
     __semihosting_library_function           0x000003f7   Thumb Code     0  indicate_semi.o(.text)
     __user_setup_stackheap                   0x00000411   Thumb Code    62  sys_stackheap_outer.o(.text)
-    ADC0_IRQHandler                          0x00000451   Thumb Code   270  cameradriver.o(i.ADC0_IRQHandler)
-    PITInit                                  0x00000591   Thumb Code    70  pitdriver.o(i.PITInit)
-    PIT_IRQHandler                           0x000005ed   Thumb Code    36  pitdriver.o(i.PIT_IRQHandler)
-    SystemInit                               0x00000615   Thumb Code     8  system_mkl25z4.o(i.SystemInit)
-    Timer0_DelayuS                           0x00000621   Thumb Code    60  timerdriver.o(i.Timer0_DelayuS)
-    __ARM_common_switch8                     0x00000661   Thumb Code    28  cameradriver.o(i.__ARM_common_switch8)
-    getLineOffset                            0x0000067d   Thumb Code   170  camerahandler.o(i.getLineOffset)
-    initCamera                               0x00000735   Thumb Code   128  cameradriver.o(i.initCamera)
-    initCameraDriver                         0x000007c9   Thumb Code    48  cameradriver.o(i.initCameraDriver)
-    initPorts                                0x00000801   Thumb Code    80  tfchandler.o(i.initPorts)
-    initialiseTimer0                         0x0000085d   Thumb Code    66  timerdriver.o(i.initialiseTimer0)
-    initialiseUART0                          0x000008ad   Thumb Code    76  uarthandler.o(i.initialiseUART0)
-    main                                     0x00000905   Thumb Code   164  main.o(i.main)
-    sendString                               0x000009fd   Thumb Code    34  uarthandler.o(i.sendString)
-    startImageCapture                        0x00000a25   Thumb Code   108  cameradriver.o(i.startImageCapture)
-    Region$$Table$$Base                      0x00000aac   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x00000acc   Number         0  anon$$obj.o(Region$$Table)
-    linePos                                  0x1ffff000   Data           2  main.o(.data)
-    State                                    0x1ffff002   Data           1  main.o(.data)
-    CalcInProgress                           0x1ffff003   Data           1  camerahandler.o(.data)
-    AnalogValues                             0x1ffff004   Data           6  cameradriver.o(.data)
-    PixelCounter                             0x1ffff00a   Data           2  cameradriver.o(.data)
-    safeBuffer                               0x1ffff00c   Data           1  cameradriver.o(.data)
-    volatileBuffer                           0x1ffff00d   Data           1  cameradriver.o(.data)
-    POT1_Value                               0x1ffff00e   Data           2  cameradriver.o(.data)
-    POT0_Value                               0x1ffff010   Data           2  cameradriver.o(.data)
-    BATT_Value                               0x1ffff012   Data           2  cameradriver.o(.data)
-    CameraState                              0x1ffff014   Data           1  cameradriver.o(.data)
-    stringBuffer                             0x1ffff018   Data         100  main.o(.bss)
-    image                                    0x1ffff07c   Data        1024  cameradriver.o(.bss)
-    __libspace_start                         0x1ffff47c   Data          96  libspace.o(.bss)
-    __temporary_stack_top$libspace           0x1ffff4dc   Data           0  libspace.o(.bss)
+    ADC0_IRQHandler                          0x00000451   Thumb Code   238  cameradriver.o(i.ADC0_IRQHandler)
+    PIT_IRQHandler                           0x0000056d   Thumb Code    42  pitdriver.o(i.PIT_IRQHandler)
+    SystemInit                               0x000005a1   Thumb Code     8  system_mkl25z4.o(i.SystemInit)
+    __ARM_common_switch8                     0x000005ad   Thumb Code    28  main.o(i.__ARM_common_switch8)
+    disableMotors                            0x000005c9   Thumb Code    24  motordriver.o(i.disableMotors)
+    enableMotors                             0x000005f9   Thumb Code    24  motordriver.o(i.enableMotors)
+    getExposureScore                         0x00000625   Thumb Code   184  camerahandler.o(i.getExposureScore)
+    getLineOffset                            0x000006f1   Thumb Code   394  camerahandler.o(i.getLineOffset)
+    initCamera                               0x000008ad   Thumb Code   128  cameradriver.o(i.initCamera)
+    initCameraDriver                         0x00000941   Thumb Code    44  cameradriver.o(i.initCameraDriver)
+    initMotors                               0x00000975   Thumb Code   146  motordriver.o(i.initMotors)
+    initPIT                                  0x00000a1d   Thumb Code    70  pitdriver.o(i.initPIT)
+    initPorts                                0x00000a79   Thumb Code   100  tfchandler.o(i.initPorts)
+    initServo                                0x00000aed   Thumb Code    56  servodriver.o(i.initServo)
+    initTimer0                               0x00000b35   Thumb Code    54  timerdriver.o(i.initTimer0)
+    initialiseUART0                          0x00000b75   Thumb Code    76  uarthandler.o(i.initialiseUART0)
+    main                                     0x00000bcd   Thumb Code   310  main.o(i.main)
+    sendString                               0x00000d65   Thumb Code    36  uarthandler.o(i.sendString)
+    setCenter                                0x00000d8d   Thumb Code     8  servodriver.o(i.setCenter)
+    setLEDs                                  0x00000d9d   Thumb Code   132  tfchandler.o(i.setLEDs)
+    setSteeringAngle                         0x00000e29   Thumb Code    24  servodriver.o(i.setSteeringAngle)
+    setTorqueVectors                         0x00000e4d   Thumb Code    24  motordriver.o(i.setTorqueVectors)
+    startImageCapture                        0x00000e6d   Thumb Code    90  cameradriver.o(i.startImageCapture)
+    swapBuffers                              0x00000edd   Thumb Code    38  cameradriver.o(i.swapBuffers)
+    Region$$Table$$Base                      0x00000f0c   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x00000f2c   Number         0  anon$$obj.o(Region$$Table)
+    doAutoExposure                           0x1ffff000   Data           1  main.o(.data)
+    linePos                                  0x1ffff002   Data           2  main.o(.data)
+    score                                    0x1ffff004   Data           2  main.o(.data)
+    runMainLoop                              0x1ffff006   Data           1  main.o(.data)
+    State                                    0x1ffff007   Data           1  main.o(.data)
+    maxValue                                 0x1ffff008   Data           2  camerahandler.o(.data)
+    minValue                                 0x1ffff00a   Data           2  camerahandler.o(.data)
+    CalcInProgress                           0x1ffff00c   Data           1  camerahandler.o(.data)
+    cameraFault                              0x1ffff00d   Data           1  camerahandler.o(.data)
+    previousValue                            0x1ffff010   Data           4  camerahandler.o(.data)
+    currentValue                             0x1ffff014   Data           4  camerahandler.o(.data)
+    average                                  0x1ffff018   Data           4  camerahandler.o(.data)
+    currentIndex                             0x1ffff01c   Data           1  camerahandler.o(.data)
+    AnalogValues                             0x1ffff01e   Data           6  cameradriver.o(.data)
+    PixelCounter                             0x1ffff024   Data           2  cameradriver.o(.data)
+    safeBuffer                               0x1ffff026   Data           1  cameradriver.o(.data)
+    volatileBuffer                           0x1ffff027   Data           1  cameradriver.o(.data)
+    POT1_Value                               0x1ffff028   Data           2  cameradriver.o(.data)
+    POT0_Value                               0x1ffff02a   Data           2  cameradriver.o(.data)
+    BATT_Value                               0x1ffff02c   Data           2  cameradriver.o(.data)
+    swapAfterProcessing                      0x1ffff02e   Data           1  cameradriver.o(.data)
+    CameraState                              0x1ffff02f   Data           1  cameradriver.o(.data)
+    pastValues                               0x1ffff030   Data          32  camerahandler.o(.bss)
+    image                                    0x1ffff050   Data        1024  cameradriver.o(.bss)
+    __libspace_start                         0x1ffff450   Data          96  libspace.o(.bss)
+    __temporary_stack_top$libspace           0x1ffff4b0   Data           0  libspace.o(.bss)
 
 
 
@@ -604,120 +664,129 @@ Memory Map of the image
 
   Image Entry point : 0x00000175
 
-  Load Region LR_1 (Base: 0x00000000, Size: 0x00000ae4, Max: 0xffffffff, ABSOLUTE)
+  Load Region LR_1 (Base: 0x00000000, Size: 0x00000f5c, Max: 0xffffffff, ABSOLUTE)
 
-    Execution Region ER_RO (Base: 0x00000000, Size: 0x00000acc, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RO (Base: 0x00000000, Size: 0x00000f2c, Max: 0xffffffff, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x00000000   0x000000c0   Data   RO          311    RESET               startup_mkl25z4.o
-    0x000000c0   0x00000008   Code   RO          389  * !!!main             c_p.l(__main.o)
-    0x000000c8   0x0000003c   Code   RO          569    !!!scatter          c_p.l(__scatter.o)
-    0x00000104   0x0000001a   Code   RO          571    !!handler_copy      c_p.l(__scatter_copy.o)
+    0x00000000   0x000000c0   Data   RO          410    RESET               startup_mkl25z4.o
+    0x000000c0   0x00000008   Code   RO          488  * !!!main             c_p.l(__main.o)
+    0x000000c8   0x0000003c   Code   RO          668    !!!scatter          c_p.l(__scatter.o)
+    0x00000104   0x0000001a   Code   RO          670    !!handler_copy      c_p.l(__scatter_copy.o)
     0x0000011e   0x00000002   PAD
-    0x00000120   0x0000001c   Code   RO          573    !!handler_zi        c_p.l(__scatter_zi.o)
-    0x0000013c   0x00000002   Code   RO          382    .ARM.Collect$$_printf_percent$$00000000  c_p.l(_printf_percent.o)
-    0x0000013e   0x0000000a   Code   RO          381    .ARM.Collect$$_printf_percent$$00000009  c_p.l(_printf_d.o)
-    0x00000148   0x00000004   Code   RO          402    .ARM.Collect$$_printf_percent$$00000017  c_p.l(_printf_percent_end.o)
-    0x0000014c   0x00000002   Code   RO          438    .ARM.Collect$$libinit$$00000000  c_p.l(libinit.o)
-    0x0000014e   0x00000000   Code   RO          452    .ARM.Collect$$libinit$$00000002  c_p.l(libinit2.o)
-    0x0000014e   0x00000000   Code   RO          454    .ARM.Collect$$libinit$$00000004  c_p.l(libinit2.o)
-    0x0000014e   0x00000000   Code   RO          457    .ARM.Collect$$libinit$$0000000A  c_p.l(libinit2.o)
-    0x0000014e   0x00000000   Code   RO          459    .ARM.Collect$$libinit$$0000000C  c_p.l(libinit2.o)
-    0x0000014e   0x00000000   Code   RO          461    .ARM.Collect$$libinit$$0000000E  c_p.l(libinit2.o)
-    0x0000014e   0x00000000   Code   RO          464    .ARM.Collect$$libinit$$00000011  c_p.l(libinit2.o)
-    0x0000014e   0x00000000   Code   RO          466    .ARM.Collect$$libinit$$00000013  c_p.l(libinit2.o)
-    0x0000014e   0x00000000   Code   RO          468    .ARM.Collect$$libinit$$00000015  c_p.l(libinit2.o)
-    0x0000014e   0x00000000   Code   RO          470    .ARM.Collect$$libinit$$00000017  c_p.l(libinit2.o)
-    0x0000014e   0x00000000   Code   RO          472    .ARM.Collect$$libinit$$00000019  c_p.l(libinit2.o)
-    0x0000014e   0x00000000   Code   RO          474    .ARM.Collect$$libinit$$0000001B  c_p.l(libinit2.o)
-    0x0000014e   0x00000000   Code   RO          476    .ARM.Collect$$libinit$$0000001D  c_p.l(libinit2.o)
-    0x0000014e   0x00000000   Code   RO          478    .ARM.Collect$$libinit$$0000001F  c_p.l(libinit2.o)
-    0x0000014e   0x00000000   Code   RO          480    .ARM.Collect$$libinit$$00000021  c_p.l(libinit2.o)
-    0x0000014e   0x00000000   Code   RO          482    .ARM.Collect$$libinit$$00000023  c_p.l(libinit2.o)
-    0x0000014e   0x00000000   Code   RO          484    .ARM.Collect$$libinit$$00000025  c_p.l(libinit2.o)
-    0x0000014e   0x00000000   Code   RO          488    .ARM.Collect$$libinit$$0000002C  c_p.l(libinit2.o)
-    0x0000014e   0x00000000   Code   RO          490    .ARM.Collect$$libinit$$0000002E  c_p.l(libinit2.o)
-    0x0000014e   0x00000000   Code   RO          492    .ARM.Collect$$libinit$$00000030  c_p.l(libinit2.o)
-    0x0000014e   0x00000000   Code   RO          494    .ARM.Collect$$libinit$$00000032  c_p.l(libinit2.o)
-    0x0000014e   0x00000002   Code   RO          495    .ARM.Collect$$libinit$$00000033  c_p.l(libinit2.o)
-    0x00000150   0x00000002   Code   RO          526    .ARM.Collect$$libshutdown$$00000000  c_p.l(libshutdown.o)
-    0x00000152   0x00000000   Code   RO          552    .ARM.Collect$$libshutdown$$00000002  c_p.l(libshutdown2.o)
-    0x00000152   0x00000000   Code   RO          554    .ARM.Collect$$libshutdown$$00000004  c_p.l(libshutdown2.o)
-    0x00000152   0x00000000   Code   RO          557    .ARM.Collect$$libshutdown$$00000007  c_p.l(libshutdown2.o)
-    0x00000152   0x00000000   Code   RO          560    .ARM.Collect$$libshutdown$$0000000A  c_p.l(libshutdown2.o)
-    0x00000152   0x00000000   Code   RO          562    .ARM.Collect$$libshutdown$$0000000C  c_p.l(libshutdown2.o)
-    0x00000152   0x00000000   Code   RO          565    .ARM.Collect$$libshutdown$$0000000F  c_p.l(libshutdown2.o)
-    0x00000152   0x00000002   Code   RO          566    .ARM.Collect$$libshutdown$$00000010  c_p.l(libshutdown2.o)
-    0x00000154   0x00000000   Code   RO          391    .ARM.Collect$$rtentry$$00000000  c_p.l(__rtentry.o)
-    0x00000154   0x00000000   Code   RO          406    .ARM.Collect$$rtentry$$00000002  c_p.l(__rtentry2.o)
-    0x00000154   0x00000006   Code   RO          418    .ARM.Collect$$rtentry$$00000004  c_p.l(__rtentry4.o)
-    0x0000015a   0x00000000   Code   RO          408    .ARM.Collect$$rtentry$$00000009  c_p.l(__rtentry2.o)
-    0x0000015a   0x00000004   Code   RO          409    .ARM.Collect$$rtentry$$0000000A  c_p.l(__rtentry2.o)
-    0x0000015e   0x00000000   Code   RO          411    .ARM.Collect$$rtentry$$0000000C  c_p.l(__rtentry2.o)
-    0x0000015e   0x00000008   Code   RO          412    .ARM.Collect$$rtentry$$0000000D  c_p.l(__rtentry2.o)
-    0x00000166   0x00000002   Code   RO          443    .ARM.Collect$$rtexit$$00000000  c_p.l(rtexit.o)
-    0x00000168   0x00000000   Code   RO          499    .ARM.Collect$$rtexit$$00000002  c_p.l(rtexit2.o)
-    0x00000168   0x00000004   Code   RO          500    .ARM.Collect$$rtexit$$00000003  c_p.l(rtexit2.o)
-    0x0000016c   0x00000006   Code   RO          501    .ARM.Collect$$rtexit$$00000004  c_p.l(rtexit2.o)
+    0x00000120   0x0000001c   Code   RO          672    !!handler_zi        c_p.l(__scatter_zi.o)
+    0x0000013c   0x00000002   Code   RO          481    .ARM.Collect$$_printf_percent$$00000000  c_p.l(_printf_percent.o)
+    0x0000013e   0x0000000a   Code   RO          480    .ARM.Collect$$_printf_percent$$00000009  c_p.l(_printf_d.o)
+    0x00000148   0x00000004   Code   RO          501    .ARM.Collect$$_printf_percent$$00000017  c_p.l(_printf_percent_end.o)
+    0x0000014c   0x00000002   Code   RO          537    .ARM.Collect$$libinit$$00000000  c_p.l(libinit.o)
+    0x0000014e   0x00000000   Code   RO          551    .ARM.Collect$$libinit$$00000002  c_p.l(libinit2.o)
+    0x0000014e   0x00000000   Code   RO          553    .ARM.Collect$$libinit$$00000004  c_p.l(libinit2.o)
+    0x0000014e   0x00000000   Code   RO          556    .ARM.Collect$$libinit$$0000000A  c_p.l(libinit2.o)
+    0x0000014e   0x00000000   Code   RO          558    .ARM.Collect$$libinit$$0000000C  c_p.l(libinit2.o)
+    0x0000014e   0x00000000   Code   RO          560    .ARM.Collect$$libinit$$0000000E  c_p.l(libinit2.o)
+    0x0000014e   0x00000000   Code   RO          563    .ARM.Collect$$libinit$$00000011  c_p.l(libinit2.o)
+    0x0000014e   0x00000000   Code   RO          565    .ARM.Collect$$libinit$$00000013  c_p.l(libinit2.o)
+    0x0000014e   0x00000000   Code   RO          567    .ARM.Collect$$libinit$$00000015  c_p.l(libinit2.o)
+    0x0000014e   0x00000000   Code   RO          569    .ARM.Collect$$libinit$$00000017  c_p.l(libinit2.o)
+    0x0000014e   0x00000000   Code   RO          571    .ARM.Collect$$libinit$$00000019  c_p.l(libinit2.o)
+    0x0000014e   0x00000000   Code   RO          573    .ARM.Collect$$libinit$$0000001B  c_p.l(libinit2.o)
+    0x0000014e   0x00000000   Code   RO          575    .ARM.Collect$$libinit$$0000001D  c_p.l(libinit2.o)
+    0x0000014e   0x00000000   Code   RO          577    .ARM.Collect$$libinit$$0000001F  c_p.l(libinit2.o)
+    0x0000014e   0x00000000   Code   RO          579    .ARM.Collect$$libinit$$00000021  c_p.l(libinit2.o)
+    0x0000014e   0x00000000   Code   RO          581    .ARM.Collect$$libinit$$00000023  c_p.l(libinit2.o)
+    0x0000014e   0x00000000   Code   RO          583    .ARM.Collect$$libinit$$00000025  c_p.l(libinit2.o)
+    0x0000014e   0x00000000   Code   RO          587    .ARM.Collect$$libinit$$0000002C  c_p.l(libinit2.o)
+    0x0000014e   0x00000000   Code   RO          589    .ARM.Collect$$libinit$$0000002E  c_p.l(libinit2.o)
+    0x0000014e   0x00000000   Code   RO          591    .ARM.Collect$$libinit$$00000030  c_p.l(libinit2.o)
+    0x0000014e   0x00000000   Code   RO          593    .ARM.Collect$$libinit$$00000032  c_p.l(libinit2.o)
+    0x0000014e   0x00000002   Code   RO          594    .ARM.Collect$$libinit$$00000033  c_p.l(libinit2.o)
+    0x00000150   0x00000002   Code   RO          625    .ARM.Collect$$libshutdown$$00000000  c_p.l(libshutdown.o)
+    0x00000152   0x00000000   Code   RO          651    .ARM.Collect$$libshutdown$$00000002  c_p.l(libshutdown2.o)
+    0x00000152   0x00000000   Code   RO          653    .ARM.Collect$$libshutdown$$00000004  c_p.l(libshutdown2.o)
+    0x00000152   0x00000000   Code   RO          656    .ARM.Collect$$libshutdown$$00000007  c_p.l(libshutdown2.o)
+    0x00000152   0x00000000   Code   RO          659    .ARM.Collect$$libshutdown$$0000000A  c_p.l(libshutdown2.o)
+    0x00000152   0x00000000   Code   RO          661    .ARM.Collect$$libshutdown$$0000000C  c_p.l(libshutdown2.o)
+    0x00000152   0x00000000   Code   RO          664    .ARM.Collect$$libshutdown$$0000000F  c_p.l(libshutdown2.o)
+    0x00000152   0x00000002   Code   RO          665    .ARM.Collect$$libshutdown$$00000010  c_p.l(libshutdown2.o)
+    0x00000154   0x00000000   Code   RO          490    .ARM.Collect$$rtentry$$00000000  c_p.l(__rtentry.o)
+    0x00000154   0x00000000   Code   RO          505    .ARM.Collect$$rtentry$$00000002  c_p.l(__rtentry2.o)
+    0x00000154   0x00000006   Code   RO          517    .ARM.Collect$$rtentry$$00000004  c_p.l(__rtentry4.o)
+    0x0000015a   0x00000000   Code   RO          507    .ARM.Collect$$rtentry$$00000009  c_p.l(__rtentry2.o)
+    0x0000015a   0x00000004   Code   RO          508    .ARM.Collect$$rtentry$$0000000A  c_p.l(__rtentry2.o)
+    0x0000015e   0x00000000   Code   RO          510    .ARM.Collect$$rtentry$$0000000C  c_p.l(__rtentry2.o)
+    0x0000015e   0x00000008   Code   RO          511    .ARM.Collect$$rtentry$$0000000D  c_p.l(__rtentry2.o)
+    0x00000166   0x00000002   Code   RO          542    .ARM.Collect$$rtexit$$00000000  c_p.l(rtexit.o)
+    0x00000168   0x00000000   Code   RO          598    .ARM.Collect$$rtexit$$00000002  c_p.l(rtexit2.o)
+    0x00000168   0x00000004   Code   RO          599    .ARM.Collect$$rtexit$$00000003  c_p.l(rtexit2.o)
+    0x0000016c   0x00000006   Code   RO          600    .ARM.Collect$$rtexit$$00000004  c_p.l(rtexit2.o)
     0x00000172   0x00000002   PAD
-    0x00000174   0x00000040   Code   RO          313  * .text               startup_mkl25z4.o
-    0x000001b4   0x00000028   Code   RO          355    .text               c_p.l(noretval__2sprintf.o)
-    0x000001dc   0x0000006c   Code   RO          357    .text               c_p.l(__printf.o)
-    0x00000248   0x0000006c   Code   RO          359    .text               c_p.l(_printf_dec.o)
-    0x000002b4   0x00000006   Code   RO          387    .text               c_p.l(heapauxi.o)
-    0x000002ba   0x000000b0   Code   RO          396    .text               c_p.l(_printf_intcommon.o)
+    0x00000174   0x00000040   Code   RO          412  * .text               startup_mkl25z4.o
+    0x000001b4   0x00000028   Code   RO          454    .text               c_p.l(noretval__2sprintf.o)
+    0x000001dc   0x0000006c   Code   RO          456    .text               c_p.l(__printf.o)
+    0x00000248   0x0000006c   Code   RO          458    .text               c_p.l(_printf_dec.o)
+    0x000002b4   0x00000006   Code   RO          486    .text               c_p.l(heapauxi.o)
+    0x000002ba   0x000000b0   Code   RO          495    .text               c_p.l(_printf_intcommon.o)
     0x0000036a   0x00000002   PAD
-    0x0000036c   0x00000030   Code   RO          398    .text               c_p.l(_printf_char_common.o)
-    0x0000039c   0x0000000a   Code   RO          400    .text               c_p.l(_sputc.o)
-    0x000003a6   0x00000028   Code   RO          403    .text               c_p.l(rtudiv10.o)
-    0x000003ce   0x00000010   Code   RO          427    .text               c_p.l(exit.o)
+    0x0000036c   0x00000030   Code   RO          497    .text               c_p.l(_printf_char_common.o)
+    0x0000039c   0x0000000a   Code   RO          499    .text               c_p.l(_sputc.o)
+    0x000003a6   0x00000028   Code   RO          502    .text               c_p.l(rtudiv10.o)
+    0x000003ce   0x00000010   Code   RO          526    .text               c_p.l(exit.o)
     0x000003de   0x00000002   PAD
-    0x000003e0   0x00000008   Code   RO          439    .text               c_p.l(libspace.o)
-    0x000003e8   0x0000000c   Code   RO          496    .text               c_p.l(sys_exit.o)
-    0x000003f4   0x00000002   Code   RO          515    .text               c_p.l(use_no_semi.o)
-    0x000003f6   0x00000000   Code   RO          517    .text               c_p.l(indicate_semi.o)
+    0x000003e0   0x00000008   Code   RO          538    .text               c_p.l(libspace.o)
+    0x000003e8   0x0000000c   Code   RO          595    .text               c_p.l(sys_exit.o)
+    0x000003f4   0x00000002   Code   RO          614    .text               c_p.l(use_no_semi.o)
+    0x000003f6   0x00000000   Code   RO          616    .text               c_p.l(indicate_semi.o)
     0x000003f6   0x0000000a   PAD
-    0x00000400   0x00000010   Code   RO          312    .ARM.__at_0x400     startup_mkl25z4.o
-    0x00000410   0x0000003e   Code   RO          424    .text               c_p.l(sys_stackheap_outer.o)
+    0x00000400   0x00000010   Code   RO          411    .ARM.__at_0x400     startup_mkl25z4.o
+    0x00000410   0x0000003e   Code   RO          523    .text               c_p.l(sys_stackheap_outer.o)
     0x0000044e   0x00000002   PAD
-    0x00000450   0x00000140   Code   RO          142    i.ADC0_IRQHandler   cameradriver.o
-    0x00000590   0x0000005c   Code   RO          225    i.PITInit           pitdriver.o
-    0x000005ec   0x00000028   Code   RO          226    i.PIT_IRQHandler    pitdriver.o
-    0x00000614   0x0000000c   Code   RO          322    i.SystemInit        system_mkl25z4.o
-    0x00000620   0x00000040   Code   RO          194    i.Timer0_DelayuS    timerdriver.o
-    0x00000660   0x0000001c   Code   RO          179    i.__ARM_common_switch8  cameradriver.o
-    0x0000067c   0x000000b8   Code   RO          115    i.getLineOffset     camerahandler.o
-    0x00000734   0x00000094   Code   RO          143    i.initCamera        cameradriver.o
-    0x000007c8   0x00000038   Code   RO          144    i.initCameraDriver  cameradriver.o
-    0x00000800   0x0000005c   Code   RO           95    i.initPorts         tfchandler.o
-    0x0000085c   0x00000050   Code   RO          195    i.initialiseTimer0  timerdriver.o
-    0x000008ac   0x00000058   Code   RO           69    i.initialiseUART0   uarthandler.o
-    0x00000904   0x000000f8   Code   RO            3    i.main              main.o
-    0x000009fc   0x00000028   Code   RO           70    i.sendString        uarthandler.o
-    0x00000a24   0x00000088   Code   RO          145    i.startImageCapture  cameradriver.o
-    0x00000aac   0x00000020   Data   RO          567    Region$$Table       anon$$obj.o
+    0x00000450   0x0000011c   Code   RO          156    i.ADC0_IRQHandler   cameradriver.o
+    0x0000056c   0x00000034   Code   RO          243    i.PIT_IRQHandler    pitdriver.o
+    0x000005a0   0x0000000c   Code   RO          421    i.SystemInit        system_mkl25z4.o
+    0x000005ac   0x0000001c   Code   RO           22    i.__ARM_common_switch8  main.o
+    0x000005c8   0x00000030   Code   RO          312    i.disableMotors     motordriver.o
+    0x000005f8   0x0000002c   Code   RO          313    i.enableMotors      motordriver.o
+    0x00000624   0x000000cc   Code   RO          122    i.getExposureScore  camerahandler.o
+    0x000006f0   0x000001bc   Code   RO          123    i.getLineOffset     camerahandler.o
+    0x000008ac   0x00000094   Code   RO          157    i.initCamera        cameradriver.o
+    0x00000940   0x00000034   Code   RO          158    i.initCameraDriver  cameradriver.o
+    0x00000974   0x000000a8   Code   RO          314    i.initMotors        motordriver.o
+    0x00000a1c   0x0000005c   Code   RO          244    i.initPIT           pitdriver.o
+    0x00000a78   0x00000074   Code   RO           96    i.initPorts         tfchandler.o
+    0x00000aec   0x00000048   Code   RO          276    i.initServo         servodriver.o
+    0x00000b34   0x00000040   Code   RO          210    i.initTimer0        timerdriver.o
+    0x00000b74   0x00000058   Code   RO           70    i.initialiseUART0   uarthandler.o
+    0x00000bcc   0x00000198   Code   RO            3    i.main              main.o
+    0x00000d64   0x00000028   Code   RO           71    i.sendString        uarthandler.o
+    0x00000d8c   0x00000010   Code   RO          277    i.setCenter         servodriver.o
+    0x00000d9c   0x0000008c   Code   RO           97    i.setLEDs           tfchandler.o
+    0x00000e28   0x00000024   Code   RO          278    i.setSteeringAngle  servodriver.o
+    0x00000e4c   0x00000020   Code   RO          315    i.setTorqueVectors  motordriver.o
+    0x00000e6c   0x00000070   Code   RO          159    i.startImageCapture  cameradriver.o
+    0x00000edc   0x00000030   Code   RO          160    i.swapBuffers       cameradriver.o
+    0x00000f0c   0x00000020   Data   RO          666    Region$$Table       anon$$obj.o
 
 
-    Execution Region ER_RW (Base: 0x1ffff000, Size: 0x00000018, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RW (Base: 0x1ffff000, Size: 0x00000030, Max: 0xffffffff, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x1ffff000   0x00000003   Data   RW            5    .data               main.o
-    0x1ffff003   0x00000001   Data   RW          116    .data               camerahandler.o
-    0x1ffff004   0x00000011   Data   RW          147    .data               cameradriver.o
+    0x1ffff000   0x00000008   Data   RW            4    .data               main.o
+    0x1ffff008   0x00000015   Data   RW          125    .data               camerahandler.o
+    0x1ffff01d   0x00000001   PAD
+    0x1ffff01e   0x00000012   Data   RW          162    .data               cameradriver.o
 
 
-    Execution Region ER_ZI (Base: 0x1ffff018, Size: 0x000005c8, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_ZI (Base: 0x1ffff030, Size: 0x00000580, Max: 0xffffffff, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x1ffff018   0x00000064   Zero   RW            4    .bss                main.o
-    0x1ffff07c   0x00000400   Zero   RW          146    .bss                cameradriver.o
-    0x1ffff47c   0x00000060   Zero   RW          440    .bss                c_p.l(libspace.o)
-    0x1ffff4dc   0x00000004   PAD
-    0x1ffff4e0   0x00000000   Zero   RW          310    HEAP                startup_mkl25z4.o
-    0x1ffff4e0   0x00000100   Zero   RW          309    STACK               startup_mkl25z4.o
+    0x1ffff030   0x00000020   Zero   RW          124    .bss                camerahandler.o
+    0x1ffff050   0x00000400   Zero   RW          161    .bss                cameradriver.o
+    0x1ffff450   0x00000060   Zero   RW          539    .bss                c_p.l(libspace.o)
+    0x1ffff4b0   0x00000000   Zero   RW          409    HEAP                startup_mkl25z4.o
+    0x1ffff4b0   0x00000100   Zero   RW          408    STACK               startup_mkl25z4.o
 
 
 ==============================================================================
@@ -727,20 +796,22 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-       688        114          0         17       1024       3792   cameradriver.o
-       184         14          0          1          0        985   camerahandler.o
-       248         84          0          3        100       2775   main.o
-       132         26          0          0          0        835   pitdriver.o
+       644        114          0         18       1024       4158   cameradriver.o
+       648         70          0         21         32       2608   camerahandler.o
+       436        108          0          8          0       3377   main.o
+       292         74          0          0          0       1743   motordriver.o
+       144         32          0          0          0        839   pitdriver.o
+       124         36          0          0          0       1235   servodriver.o
         80         44        192          0        256        892   startup_mkl25z4.o
         12          4          0          0          0        445   system_mkl25z4.o
-        92         12          0          0          0        408   tfchandler.o
-       144         18          0          0          0        896   timerdriver.o
-       128         18          0          0          0        931   uarthandler.o
+       256         24          0          0          0        914   tfchandler.o
+        64         10          0          0          0        401   timerdriver.o
+       128         16          0          0          0        939   uarthandler.o
 
     ----------------------------------------------------------------------
-      1708        334        224         24       1380      11959   Object Totals
+      2828        532        224         48       1312      17551   Object Totals
          0          0         32          0          0          0   (incl. Generated)
-         0          0          0          3          0          0   (incl. Padding)
+         0          0          0          1          0          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -778,8 +849,8 @@ Image component sizes
          2          0          0          0          0         68   use_no_semi.o
 
     ----------------------------------------------------------------------
-       832         44          0          0        100       1076   Library Totals
-        20          0          0          0          4          0   (incl. Padding)
+       832         44          0          0         96       1076   Library Totals
+        20          0          0          0          0          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -788,7 +859,7 @@ Image component sizes
        812         44          0          0         96       1076   c_p.l
 
     ----------------------------------------------------------------------
-       832         44          0          0        100       1076   Library Totals
+       832         44          0          0         96       1076   Library Totals
 
     ----------------------------------------------------------------------
 
@@ -797,15 +868,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      2540        378        224         24       1480      12019   Grand Totals
-      2540        378        224         24       1480      12019   ELF Image Totals
-      2540        378        224         24          0          0   ROM Totals
+      3660        576        224         48       1408      17259   Grand Totals
+      3660        576        224         48       1408      17259   ELF Image Totals
+      3660        576        224         48          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 2764 (   2.70kB)
-    Total RW  Size (RW Data + ZI Data)              1504 (   1.47kB)
-    Total ROM Size (Code + RO Data + RW Data)       2788 (   2.72kB)
+    Total RO  Size (Code + RO Data)                 3884 (   3.79kB)
+    Total RW  Size (RW Data + ZI Data)              1456 (   1.42kB)
+    Total ROM Size (Code + RO Data + RW Data)       3932 (   3.84kB)
 
 ==============================================================================
 
