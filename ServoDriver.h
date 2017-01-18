@@ -1,4 +1,4 @@
-// Cameron Coats / Group 3
+// Glen Dale / Group 3
 // EN0627 / NXP Car
 // 
 // Servo Driver using Timer 1
