@@ -7,11 +7,10 @@
 #include "stdio.h"
 #include "main.h"
 #include "TFCHandler.h"
-#include "UARTHandler.h"
 
 // set initial state
 MainState State = INIT;
-
+volatile Commands currentCommand = IDLE;
 int main(void){
 	char stringBuffer[128];
 	unsigned char sendLine = 0;
@@ -46,6 +45,25 @@ int main(void){
 					// Do line detection
 				  State = START;
 					//sendString("Running");
+				}
+				// handle UART commands here - decode in interrupt
+				switch(currentCommand){
+					case LINESCAN:
+						State = SEND_LINE;
+					break;
+					case STEERING:
+						State = SET_STEERING;
+					break;
+					case SPEED:
+						State = SET_SPEED;
+					break;
+					case ERROR:
+						State = COMMAND_ERROR;
+					break;
+					case IDLE:
+					default:
+						// nop
+					break;
 				}
 			break;
 				
@@ -87,6 +105,33 @@ int main(void){
 				if(runMainLoop) State = RUN;
 				if((GPIOC_PDIR & 1<<17) != 0) State = STOP;
 				if(cameraFault) State = CAMERA_FAULT;
+			break;
+			case SEND_LINE:
+				linePos = getLineOffset();
+				sprintf(stringBuffer,"Line Position: %d\n",linePos);
+				sendString(stringBuffer);
+				State = WAIT_PRESS;
+				currentCommand = IDLE;
+				commandVal = 0;
+			break;
+			case SET_SPEED:
+				enableMotors();
+				setSpeed(commandVal);
+				State = WAIT_PRESS;
+				currentCommand = IDLE;
+				commandVal = 0;
+				sendString("> Ok\n");
+			break;
+			case SET_STEERING:
+				setSteeringAngle(commandVal);
+				State = WAIT_PRESS;
+				currentCommand = IDLE;
+				commandVal = 0;
+				sendString("> Ok\n");
+			break;
+			case COMMAND_ERROR:
+				sendString("> Command not recognised\n");
+				State = WAIT_PRESS;
 			break;
 			default:
 				State = WAIT_PRESS;

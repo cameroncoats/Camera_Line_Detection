@@ -19,6 +19,17 @@
 	#define ClockGating_PortA 0x0200
 	#define PinMux_UART 0x0200
 	
+	#ifndef commands_type_
+	#define commands_type_
+
+	typedef enum {IDLE, LINESCAN, SPEED, STEERING,ERROR} Commands;
+
+	#endif // commands_type_
+	volatile char charPtr = 0;
+	volatile char currentChar = 0;
+	volatile char strBuf[32];
+	extern volatile char commandVal;
+	extern volatile Commands currentCommand;
   void initialiseUART0(void);
 
   void sendString(char* string);

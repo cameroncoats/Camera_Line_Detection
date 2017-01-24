@@ -72,3 +72,7 @@ TPM0->CONTROLS[2].CnV = POT1_Value * 4;
 	TPM0->CONTROLS[0].CnV = (POT1_Value * 3) + (linePos * TORQUEVECTOR_AMT);
 	}
 }
+void setSpeed(char speed){
+	TPM0->CONTROLS[2].CnV = (speed * 163);
+	TPM0->CONTROLS[0].CnV = (speed * 163);
+}

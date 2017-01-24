@@ -414,6 +414,16 @@
               <FileType>1</FileType>
               <FilePath>.\PITDriver.c</FilePath>
             </File>
+            <File>
+              <FileName>ServoDriver.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\ServoDriver.c</FilePath>
+            </File>
+            <File>
+              <FileName>MotorDriver.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\MotorDriver.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
